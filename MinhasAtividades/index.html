@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="assets/css/styles.css"/>
+
+    <title>Introdução ao Javascript</title>
+</head>
+
+<body>
+    <h1>Contador</h1>
+    <p>Primeiro projeto do módulo Introdução ao Javascript</p>
+
+   <!--  Funciona sem o addEventListener: retirar o div e o <script name = EventListener>
+    <div id = "counter">
+            <button name = "subtrair" onclick="decrement()">-</button>
+            <span style="color: Blue;" id = "currentNumber">0</span>
+            <button name ="adicionar" onclick="increment()">+</button>
+    </div>  -->
+
+    <div id = "counter">
+        <button id="subtrair">-</button>
+        <span style="color: rgb(145, 255, 0);" id = "currentNumber">0</span>
+        <button id="adicionar">+</button>
+    </div> 
+
+    <script name = EventListener>
+        let count = 0
+        document.getElementById("adicionar").addEventListener("click", Increment);
+        document.getElementById("subtrair").addEventListener("click", Decrement);
+
+        function Increment() {
+        if (count < 10 ) {
+            count++;
+            document.getElementById("currentNumber").innerHTML = count;
+        }
+
+        if (count >= 0) document.getElementById("currentNumber").style.color = 'blue';
+        }
+
+        function Decrement() {
+        if (count > -10 ) {
+            count--;
+            document.getElementById("currentNumber").innerHTML = count;
+        }
+
+        if (count < 0) document.getElementById("currentNumber").style.color = "red"; 
+        }
+    </script>           
+
+    <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
+
